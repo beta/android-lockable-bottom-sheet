@@ -1,6 +1,6 @@
 # Android Lockable Bottom Sheet
 
-[![JitPack Badge](https://jitpack.io/v/beta/android-lockable-bottom-sheet.svg)](https://jitpack.io/#beta/android-lockable-bottom-sheet)
+[![JitPack Badge](https://jitpack.io/v/net.kyouko/android-lockable-bottom-sheet.svg)](https://jitpack.io/#net.kyouko/android-lockable-bottom-sheet)
 
 Android Lockable Bottom Sheet is a library built on top of the Android Design Support Library, and provides a simple hack on the bottom sheet dialogs to make them able to be noncancelable.
 
@@ -25,7 +25,7 @@ And add the dependency to `build.gradle` in your app's module:
 
 ```gradle
 dependencies {
-    compile 'com.github.beta:android-lockable-bottom-sheet:0.1.0'
+    compile 'net.kyouko:android-lockable-bottom-sheet:0.1.0'
 }
 ```
 
