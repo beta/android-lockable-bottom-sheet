@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:drawable="?android:attr/selectableItemBackground"/>
+            <item>
+                <shape android:shape="oval">
+                    <size
+                        android:width="56dp"
+                        android:height="56dp"/>
+                    <corners android:radius="28dp"/>
+                    <padding
+                        android:bottom="8dp"
+                        android:left="8dp"
+                        android:right="8dp"
+                        android:top="8dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_lock_outline_black_24dp"/>
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item android:drawable="?android:attr/selectableItemBackground"/>
+            <item>
+                <shape android:shape="oval">
+                    <size
+                        android:width="56dp"
+                        android:height="56dp"/>
+                    <corners android:radius="28dp"/>
+                    <padding
+                        android:bottom="8dp"
+                        android:left="8dp"
+                        android:right="8dp"
+                        android:top="8dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_lock_open_black_24dp"/>
+        </layer-list>
+    </item>
+
+</selector>

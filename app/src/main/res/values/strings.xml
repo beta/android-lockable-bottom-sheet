@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Lockable Bottom Sheet Demo</string>
+    <string name="title.button.summon">Summon Bottom Sheet</string>
+</resources>
