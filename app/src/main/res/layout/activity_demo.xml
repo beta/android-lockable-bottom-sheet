@@ -13,4 +13,11 @@
         android:layout_gravity="center"
         android:text="@string/title.button.summon"/>
 
+    <Button
+        android:id="@+id/button_summon_popUP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/summon_pop_up" />
+
 </FrameLayout>

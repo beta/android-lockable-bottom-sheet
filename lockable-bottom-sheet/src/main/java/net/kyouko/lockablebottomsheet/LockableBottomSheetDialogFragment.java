@@ -1,8 +1,10 @@
 package net.kyouko.lockablebottomsheet;
 
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.design.widget.BottomSheetDialogFragment;
+import android.graphics.Matrix;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -23,13 +25,34 @@ public class LockableBottomSheetDialogFragment extends BottomSheetDialogFragment
      */
     @Override
     public void setCancelable(boolean cancelable) {
-        super.setCancelable(cancelable);
+        if (!cancelable) {
+            final View touchOutsideView = getDialog().getWindow().getDecorView().findViewById(R.id.touch_outside);
+            touchOutsideView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    int actionBarHeight = 0;
+                    int[] array = {0, 0};
+                    v.getLocationOnScreen(array);
+                    // Calculate ActionBar height
+                    TypedValue tv = new TypedValue();
+                    actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
+                    Matrix matrix = new Matrix();
+                    matrix.setTranslate(0, actionBarHeight + array[1]);
+                    event.transform(matrix);
+                    getActivity().dispatchTouchEvent(event);
+                    return true;
+                }
+            });
 
-        BottomSheetDialog dialog = (BottomSheetDialog) getDialog();
-        dialog.setCanceledOnTouchOutside(cancelable);
+        } else {
+            final View touchOutsideView = getDialog().getWindow().getDecorView().findViewById(R.id.touch_outside);
+            touchOutsideView.setOnTouchListener(new View.OnTouchListener() {
 
-        View bottomSheetView = dialog.getWindow().getDecorView().findViewById(R.id.design_bottom_sheet);
-        BottomSheetBehavior.from(bottomSheetView).setHideable(cancelable);
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    return false;
+                }
+            });
+        }
     }
-
 }

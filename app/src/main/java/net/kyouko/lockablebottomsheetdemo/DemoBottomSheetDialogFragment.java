@@ -21,7 +21,7 @@ public class DemoBottomSheetDialogFragment extends LockableBottomSheetDialogFrag
         View contentView = View.inflate(getContext(), R.layout.dialog_demo, null);
         dialog.setContentView(contentView);
 
-        CheckBox locker = (CheckBox) dialog.findViewById(R.id.checkbox_locker);
+        CheckBox locker = dialog.findViewById(R.id.checkbox_locker);
         locker.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
