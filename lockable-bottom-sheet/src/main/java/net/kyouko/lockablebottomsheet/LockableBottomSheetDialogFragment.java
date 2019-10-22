@@ -1,8 +1,8 @@
 package net.kyouko.lockablebottomsheet;
 
 import android.graphics.Matrix;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.design.widget.BottomSheetDialogFragment;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,7 +26,7 @@ public class LockableBottomSheetDialogFragment extends BottomSheetDialogFragment
     @Override
     public void setCancelable(boolean cancelable) {
         if (!cancelable) {
-            final View touchOutsideView = getDialog().getWindow().getDecorView().findViewById(android.support.design.R.id.touch_outside);
+            final View touchOutsideView = getDialog().getWindow().getDecorView().findViewById(R.id.touch_outside);
             touchOutsideView.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -45,7 +45,7 @@ public class LockableBottomSheetDialogFragment extends BottomSheetDialogFragment
             });
 
         } else {
-            final View touchOutsideView = getDialog().getWindow().getDecorView().findViewById(android.support.design.R.id.touch_outside);
+            final View touchOutsideView = getDialog().getWindow().getDecorView().findViewById(R.id.touch_outside);
             touchOutsideView.setOnTouchListener(new View.OnTouchListener() {
 
                 @Override

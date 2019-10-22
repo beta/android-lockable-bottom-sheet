@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Lockable Bottom Sheet Demo</string>
     <string name="title.button.summon">Summon Bottom Sheet</string>
+    <string name="clickHere">ClickHere</string>
+    <string name="summon_pop_up">Summon Pop UP</string>
 </resources>
